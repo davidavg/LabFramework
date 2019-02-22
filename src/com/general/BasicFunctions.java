@@ -9,6 +9,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -39,11 +40,15 @@ public class BasicFunctions {
 			case "IE": 
 				System.out.println("--> BasicFunctions --> Open IE"); 
 				driver = new InternetExplorerDriver();
-				break;
+				return true;
 			case "FIREFOX": 
 			case "MOZILLA":	
 				System.out.println("--> BasicFunctions --> Open FireFox"); 
 				driver = new FirefoxDriver();
+				break;
+			case "EDGE":
+				System.out.println("--> BasicFunctions --> Open Edge");
+				driver = new EdgeDriver();
 				break;
 			default: System.out.println("Browser is either invalid or not specified");
 			return false;
@@ -64,11 +69,15 @@ public class BasicFunctions {
 			case "IE": 
 				System.out.println("--> BasicFunctions --> Open IE"); 
 				driver = new InternetExplorerDriver();
-				break;
+				return true;
 			case "FIREFOX": 
 			case "MOZILLA":	
 				System.out.println("--> BasicFunctions --> Open FireFox"); 
 				driver = new FirefoxDriver();
+				break;
+			case "EDGE":
+				System.out.println("--> BasicFunctions --> Open Edge");
+				driver = new EdgeDriver();
 				break;
 			default: System.out.println("Browser is either invalid or not specified");
 			return false;

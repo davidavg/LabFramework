@@ -1,13 +1,14 @@
 package com.unit_tests;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import com.general.BasicFunctions;
 import org.junit.jupiter.api.Test;
 
 class cross_broswer {
 	
 	//Constant values for tests
-	String CHROME = "chrome", FIREFOX = "firefox", MOZILLA = "mozilla", IE = "ie";
+	String CHROME = "chrome", FIREFOX = "firefox", MOZILLA = "mozilla", IE = "ie", EDGE = "edge";
 
 	@Test
 	void test_browser_default() {
@@ -42,6 +43,13 @@ class cross_broswer {
 	void test_browser_ie() {
 		BasicFunctions basic = new BasicFunctions();
 		assertTrue(basic.openBroswer(IE));
+		basic.closeBroswer();
+	}
+	
+	@Test
+	void test_browser_edge() {
+		BasicFunctions basic = new BasicFunctions();
+		assertTrue(basic.openBroswer(EDGE));
 		basic.closeBroswer();
 	}
 
