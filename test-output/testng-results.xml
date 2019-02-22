@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6164" started-at="2019-02-21T16:03:55Z" finished-at="2019-02-21T16:04:01Z">
+  <suite name="Default suite" duration-ms="5821" started-at="2019-02-22T17:23:13Z" finished-at="2019-02-22T17:23:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6164" started-at="2019-02-21T16:03:55Z" finished-at="2019-02-21T16:04:01Z">
-      <class name="tests.Login">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.Login@735b5592]" name="beforeClass" is-config="true" duration-ms="4948" started-at="2019-02-21T16:03:55Z" finished-at="2019-02-21T16:03:59Z">
+    <test name="Default test" duration-ms="5821" started-at="2019-02-22T17:23:13Z" finished-at="2019-02-22T17:23:18Z">
+      <class name="com.sample_tests.Login">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.sample_tests.Login@29ee9faa]" name="beforeClass" is-config="true" duration-ms="3810" started-at="2019-02-22T17:23:13Z" finished-at="2019-02-22T17:23:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.Login@735b5592]" name="beforeMethod" is-config="true" duration-ms="532" started-at="2019-02-21T16:04:00Z" finished-at="2019-02-21T16:04:00Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.sample_tests.Login@29ee9faa]" name="beforeMethod" is-config="true" duration-ms="1303" started-at="2019-02-22T17:23:16Z" finished-at="2019-02-22T17:23:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginTest01()[pri:0, instance:tests.Login@735b5592]" name="loginTest01" duration-ms="43" started-at="2019-02-21T16:04:00Z" finished-at="2019-02-21T16:04:00Z">
+        <test-method status="PASS" signature="loginTest01()[pri:0, instance:com.sample_tests.Login@29ee9faa]" name="loginTest01" duration-ms="45" started-at="2019-02-22T17:23:18Z" finished-at="2019-02-22T17:23:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest01 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.Login@735b5592]" name="afterClass" is-config="true" duration-ms="611" started-at="2019-02-21T16:04:00Z" finished-at="2019-02-21T16:04:01Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.sample_tests.Login@29ee9faa]" name="afterClass" is-config="true" duration-ms="648" started-at="2019-02-22T17:23:18Z" finished-at="2019-02-22T17:23:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- tests.Login -->
+      </class> <!-- com.sample_tests.Login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

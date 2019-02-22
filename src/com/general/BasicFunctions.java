@@ -1,4 +1,4 @@
-package general;
+package com.general;
 
 import java.io.IOException;
 
@@ -30,7 +30,7 @@ public class BasicFunctions {
 	}
 	
 	
-	public void openBroswer() {
+	public boolean openBroswer() {
 		switch(strBrowser.toUpperCase()) {
 			case "CHROME": 
 				System.out.println("--> BasicFunctions --> Open Chrome"); 
@@ -46,13 +46,16 @@ public class BasicFunctions {
 				driver = new FirefoxDriver();
 				break;
 			default: System.out.println("Browser is either invalid or not specified");
+			return false;
 		}
 		
 		System.out.println("--> BasicFunctions --> Maximize Window");
 		driver.manage().window().maximize();
+		
+		return true;
 	}
 	
-	public void openBroswer(String strBrowser) {
+	public boolean openBroswer(String strBrowser) {
 		switch(strBrowser.toUpperCase()) {
 			case "CHROME": 
 				System.out.println("--> BasicFunctions --> Open Chrome"); 
@@ -68,10 +71,13 @@ public class BasicFunctions {
 				driver = new FirefoxDriver();
 				break;
 			default: System.out.println("Browser is either invalid or not specified");
+			return false;
 		}
 		
 		System.out.println("--> BasicFunctions --> Maximize Window");
 		driver.manage().window().maximize();
+		
+		return true;
 	}
 	
 	public void navigateTo() {

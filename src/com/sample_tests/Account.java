@@ -1,4 +1,4 @@
-package tests;
+package com.sample_tests;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -6,10 +6,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import general.ITestTemplate;
-import general.Navigation;
+import com.general.ITestTemplate;
+import com.general.Navigation;
 
-@Listeners(general.TestNGListeners.class)
+@Listeners(com.general.TestNGListeners.class)
 public class Account extends Navigation implements ITestTemplate {
 	
 	@Override

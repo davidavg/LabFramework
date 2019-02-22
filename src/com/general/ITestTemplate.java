@@ -1,4 +1,4 @@
-package general;
+package com.general;
 
 public interface ITestTemplate {
 	
