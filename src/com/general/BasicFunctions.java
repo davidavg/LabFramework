@@ -99,13 +99,23 @@ public class BasicFunctions {
 		driver.get(strUrl);
 	}
 	
-	public void navigateAndWait(String strBy, String strID) {
+	public boolean navigateAndWait(By objBy) {
 		System.out.println("--> BasicFunctions --> Navigate to " + strUrl);
 		driver.get(strUrl);
-		System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
+		//System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
 		
 		setTimeOut();
-		switch (strBy.toUpperCase()) {
+		
+		try {
+			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
+		}catch(Exception e){
+			System.out.println(e);
+			return false;
+		}
+		
+		return true;
+		
+		/*switch (strBy.toUpperCase()) {
 		case "ID": 
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id(strID)))); break;
 		case "CLASS": 
@@ -120,17 +130,27 @@ public class BasicFunctions {
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(strID)))); break;
 		case "CSS": 
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(strID)))); break;
-		}
+		}*/
 		
 	}
 	
-	public void navigateAndWait(String strBy, String strID, int timeOutInSeconds) {
+	public boolean navigateAndWait(By objBy, int timeOutInSeconds) {
 		System.out.println("--> BasicFunctions --> Navigate to " + strUrl);
 		driver.get(strUrl);
-		System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
+		//System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
 		
 		setTimeOut(timeOutInSeconds);
-		switch (strBy.toUpperCase()) {
+		
+		try {
+			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
+		}catch(Exception e){
+			System.out.println(e);
+			return false;
+		}
+		
+		return true;
+		
+		/*switch (strBy.toUpperCase()) {
 		case "ID": 
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id(strID)))); break;
 		case "CLASS": 
@@ -145,7 +165,7 @@ public class BasicFunctions {
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(strID)))); break;
 		case "CSS": 
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(strID)))); break;
-		}
+		}*/
 		
 	}
 	
