@@ -227,6 +227,12 @@ public class BasicFunctions {
 	}
 	
 	public void setTimeOut(int timeOutInSeconds) {
-		wait = new WebDriverWait(driver, timeOutInSeconds);
+		try {
+			wait = new WebDriverWait(driver, timeOutInSeconds);
+		}catch(NumberFormatException nfe) {
+			System.out.println("Unable to set timeout due to " + nfe);
+		}catch(Exception e) {
+			System.out.println("Unable to set timeout due to " + e);
+		}
 	}
 }
