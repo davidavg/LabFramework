@@ -15,7 +15,7 @@ public class ExcelUtil {
 	private static XSSFCell Cell;
 	//private static XSSFRow Row;
 	
-	private static String FilePath = "C:\\Users\\David Avalos\\eclipse-workspace\\javaLab\\src\\data\\testfile.xlsx";
+	private static String FilePath = "C:\\Users\\David Avalos\\Documents\\eclipse\\frameworkLabortory\\src\\data\\testfile.xlsx";
 	private static String SheetName = "Sheet1";
 	
 	
@@ -31,7 +31,7 @@ public class ExcelUtil {
 		System.out.println("Temrinating...");
 	}
 	
-	public static void myInputTest(String FilePath, String SheetName) {
+	public static Object[][] myInputTest(String FilePath, String SheetName) {
 		
 		String[][] tabArray = null;
 		
@@ -70,7 +70,7 @@ public class ExcelUtil {
 
 					tabArray[ci][cj]=getCellData(i,j);
 
-					System.out.println(tabArray[ci][cj]);  
+					//System.out.println(tabArray[ci][cj]);  
 				}
 			}
 			
@@ -80,6 +80,8 @@ public class ExcelUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		return tabArray;
 	}
 	
 	public static String getCellData(int RowNum, int ColNum) throws Exception {
