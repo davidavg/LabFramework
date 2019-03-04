@@ -15,11 +15,11 @@ public class ExcelUtil {
 	private static XSSFCell Cell;
 	//private static XSSFRow Row;
 	
-	/*private static String FilePath = "C:\\Users\\David Avalos\\Documents\\eclipse\\frameworkLabortory\\src\\data\\testfile.xlsx";
-	private static String SheetName = "Sheet1";
+	//private static String FilePath = "src\\data\\testfile.xlsx";
+	//private static String SheetName = "Sheet1";
 	
 	
-	public static void main (String args[]) {
+	/*public static void main (String args[]) {
 		
 		System.out.println("Initializing...");
 		try {
@@ -34,6 +34,9 @@ public class ExcelUtil {
 	public static Object[][] myInputTest(String FilePath, String SheetName) {
 		
 		String[][] tabArray = null;
+		final int START_ROW = 1;
+		final int START_COL = 0;
+		
 		
 		System.out.println("Creating file object");
 		File myExcel = new File(FilePath);
@@ -48,25 +51,20 @@ public class ExcelUtil {
 			System.out.println("Create sheet");
 			ExcelWSheet = ExcelWBook.getSheet(SheetName);
 
-			int startRow = 1;
-			int startCol = 0;
 			int ci,cj;
 			int totalRows = ExcelWSheet.getLastRowNum();
-
-			// you can write a function as well to get Column count
-
-			int totalCols = 2;
+			int totalCols = ExcelWSheet.getRow(0).getLastCellNum();
 
 			tabArray=new String[totalRows][totalCols];
 
 			ci=0;
 			
 			System.out.println("get content from the file");
-			for (int i=startRow;i<=totalRows;i++, ci++) {           	   
+			for (int i=START_ROW;i<=totalRows;i++, ci++) {           	   
 
 				cj=0;
 
-				for (int j=startCol;j<totalCols;j++, cj++){
+				for (int j=START_COL;j<totalCols;j++, cj++){
 
 					tabArray[ci][cj]=getCellData(i,j);
 
