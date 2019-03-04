@@ -16,6 +16,8 @@ import com.general.ExcelUtil;
 @Listeners(com.general.TestNGListeners.class)
 public class Login extends Navigation implements ITestTemplate {
 	
+	String CREDENTIALS_PATH = "src/data/testfile.xlsx", CREDENTIALS_SHEET = "Sheet1";
+	
 	@Override
 	@BeforeClass
 	public void beforeClass() {
@@ -38,11 +40,11 @@ public class Login extends Navigation implements ITestTemplate {
 	
 	@DataProvider
 	public Object[][] credentials(){
-		Object[][] testArray = ExcelUtil.myInputTest("C:\\Users\\David Avalos\\Documents\\eclipse\\frameworkLabortory\\src\\data\\testfile.xlsx", "Sheet1");
+		Object[][] testArray = ExcelUtil.myInputTest(CREDENTIALS_PATH, CREDENTIALS_SHEET);
 		return testArray;
 	}
 	
-	@Test(dataProvider="credentials",enabled = true)
+	@Test(dataProvider="credentials", enabled = true)
 	public void loginTest01(String user, String password) {
 		System.out.println("--> Login --> Happy path test");
 		login(user, password);

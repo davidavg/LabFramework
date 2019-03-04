@@ -15,7 +15,7 @@ public class ExcelUtil {
 	private static XSSFCell Cell;
 	//private static XSSFRow Row;
 	
-	private static String FilePath = "C:\\Users\\David Avalos\\Documents\\eclipse\\frameworkLabortory\\src\\data\\testfile.xlsx";
+	/*private static String FilePath = "C:\\Users\\David Avalos\\Documents\\eclipse\\frameworkLabortory\\src\\data\\testfile.xlsx";
 	private static String SheetName = "Sheet1";
 	
 	
@@ -29,7 +29,7 @@ public class ExcelUtil {
 			e.printStackTrace();
 		}
 		System.out.println("Temrinating...");
-	}
+	}*/
 	
 	public static Object[][] myInputTest(String FilePath, String SheetName) {
 		
