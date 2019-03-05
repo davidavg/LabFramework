@@ -235,4 +235,70 @@ public class BasicFunctions {
 			System.out.println("Unable to set timeout due to " + e);
 		}
 	}
+	
+	public boolean verifyPresenceAndVisibility(By objBy) {
+		System.out.println("--> BasicFunctions --> Wait for element");
+		///System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
+		
+		setTimeOut();
+		
+		try {
+			wait.until(ExpectedConditions.presenceOfElementLocated(objBy));
+			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
+		}catch(Exception e){
+			System.out.println(e);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public boolean verifyPresenceAndVisibility(By objBy, int timeOutInSeconds) {
+		System.out.println("--> BasicFunctions --> Wait for element");
+		///System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
+		
+		setTimeOut(timeOutInSeconds);
+		
+		try {
+			wait.until(ExpectedConditions.presenceOfElementLocated(objBy));
+			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
+		}catch(Exception e){
+			System.out.println(e);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public boolean verifyVisibility(By objBy) {
+		System.out.println("--> BasicFunctions --> Wait for element");
+		///System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
+		
+		setTimeOut();
+		
+		try {
+			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
+		}catch(Exception e){
+			System.out.println(e);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public boolean verifyVisibility(By objBy, int timeOutInSeconds) {
+		System.out.println("--> BasicFunctions --> Wait for element");
+		///System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
+		
+		setTimeOut(timeOutInSeconds);
+		
+		try {
+			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
+		}catch(Exception e){
+			System.out.println(e);
+			return false;
+		}
+		
+		return true;
+	}
 }

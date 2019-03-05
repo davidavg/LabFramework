@@ -93,76 +93,75 @@ public class navigateAndWait {
 		Assert.assertFalse(basic.navigateAndWait(By.cssSelector(".test")));
 	}
 	
-	///////////////////////////////////////////////////
 	
 	@Test
 	void navigateByID_objectFound_timeOutset() {
-		Assert.assertTrue(basic.navigateAndWait(By.id("hplogo"),5000));
+		Assert.assertTrue(basic.navigateAndWait(By.id("hplogo"),5));
 	}
 	
 	@Test
 	void navigateByID_objectNotfound_timeOutset() {
-		Assert.assertFalse(basic.navigateAndWait(By.id("test"),5000));
+		Assert.assertFalse(basic.navigateAndWait(By.id("test"),5));
 	}
 	
 	@Test
 	void navigateByCLASS_objectFound_timeOutset() {
-		Assert.assertTrue(basic.navigateAndWait(By.className("ctr-p"),5000));
+		Assert.assertTrue(basic.navigateAndWait(By.className("ctr-p"),5));
 	}
 	
 	@Test
 	void navigateByCLASS_objectNotfound_timeOutset() {
-		Assert.assertFalse(basic.navigateAndWait(By.className("test"),5000));
+		Assert.assertFalse(basic.navigateAndWait(By.className("test"),5));
 	}
 	
 	@Test
 	void navigateByLINK_objectFound_timeOutset() {
-		Assert.assertTrue(basic.navigateAndWait(By.linkText("Gmail"),5000));
+		Assert.assertTrue(basic.navigateAndWait(By.linkText("Gmail"),5));
 	}
 	
 	@Test
 	void navigateByLINK_objectNotfound_timeOutset() {
-		Assert.assertFalse(basic.navigateAndWait(By.className("test"),5000));
+		Assert.assertFalse(basic.navigateAndWait(By.className("test"),5));
 	}
 		
 	@Test
 	void navigateByNAME_objectFound_timeOutset() {
-		Assert.assertTrue(basic.navigateAndWait(By.name("f"),5000));
+		Assert.assertTrue(basic.navigateAndWait(By.name("f"),5));
 	}
 	
 	@Test
 	void navigateByNAME_objectNotfound_timeOutset() {
-		Assert.assertFalse(basic.navigateAndWait(By.name("test"),5000));
+		Assert.assertFalse(basic.navigateAndWait(By.name("test"),5));
 	}
 	
 	@Test
 	void navigateByTAG_objectFound_timeOutset() {
-		Assert.assertTrue(basic.navigateAndWait(By.tagName("div"),5000));
+		Assert.assertTrue(basic.navigateAndWait(By.tagName("div"),5));
 	}
 	
 	@Test
 	void navigateByTAG_objectNotfound_timeOutset() {
-		Assert.assertFalse(basic.navigateAndWait(By.tagName("test"),5000));
+		Assert.assertFalse(basic.navigateAndWait(By.tagName("test"),5));
 	}
 	
 	@Test
 	void navigateByXPATH_objectFound_timeOutset() {
-		Assert.assertTrue(basic.navigateAndWait(By.xpath("//*[@id=\"tsf\"]/div[2]/div/div[1]/div/div[1]/input"),5000));
+		Assert.assertTrue(basic.navigateAndWait(By.xpath("//*[@id=\"tsf\"]/div[2]/div/div[1]/div/div[1]/input"),5));
 	}
 	
 	@Test
 	void navigateByXPATH_objectNotfound_timeOutset() {
-		Assert.assertFalse(basic.navigateAndWait(By.xpath("//*[@id='test']"),5000));
+		Assert.assertFalse(basic.navigateAndWait(By.xpath("//*[@id='test']"),5));
 	}
 	
 	@Test
 	void navigateByCSS_objectFound_timeOutset() {
-		Assert.assertTrue(basic.navigateAndWait(By.cssSelector(".hp.vasq"),5000));
+		Assert.assertTrue(basic.navigateAndWait(By.cssSelector(".hp.vasq"),5));
 	}
 	
 	@Test
 	void navigateByCSS_objectNotfound_timeOutset() {
-		Assert.assertFalse(basic.navigateAndWait(By.cssSelector(".test"),5000));
+		Assert.assertFalse(basic.navigateAndWait(By.cssSelector(".test"),5));
 	}
 	
 
