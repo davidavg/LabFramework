@@ -1,11 +1,5 @@
 package com.general;
 
-import java.io.IOException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,11 +8,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 public class BasicFunctions {
 	
@@ -27,7 +16,10 @@ public class BasicFunctions {
 	public WebDriverWait wait;
 	
 	public BasicFunctions() {
-		readConfigXML();
+		ConfigParams cp = new ConfigParams();
+		String[] params = cp.setDefaultValues();
+		strBrowser = params[0];
+		strUrl = params[1];
 	}
 	
 	
@@ -187,40 +179,7 @@ public class BasicFunctions {
 		driver.navigate().refresh();
 	}
 	
-	private void readConfigXML() {
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		try {
-			//Open  XML config file
-			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document doc = builder.parse("src/config/config.xml");
-			
-			//Read Browser
-			NodeList browser = doc.getElementsByTagName("browser");
-			Node browserNode = browser.item(0);
-			if(browserNode.getNodeType()==Node.ELEMENT_NODE) {
-				Element browserElement = (Element) browserNode;
-				strBrowser = browserElement.getTextContent();
-			}
-
-			//Read test URL
-			NodeList url = doc.getElementsByTagName("testUrl");
-			Node urlNode = url.item(0);
-			if(urlNode.getNodeType()==Node.ELEMENT_NODE) {
-				Element urlElement = (Element) urlNode;
-				strUrl = urlElement.getTextContent();
-			}
-			
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 	
 	public void setTimeOut() {
 		wait = new WebDriverWait(driver, 10);
@@ -300,5 +259,21 @@ public class BasicFunctions {
 		}
 		
 		return true;
+	}
+	
+	public void setBrowser(String browser) {
+		this.strBrowser = browser;
+	}
+	
+	public String getBrowser() {
+		return this.strBrowser;
+	}
+	
+	public void setUrl(String url) {
+		this.strUrl = url;
+	}
+	
+	public String getUrl() {
+		return this.strUrl;
 	}
 }

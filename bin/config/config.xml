@@ -2,4 +2,5 @@
 <config>
 	<browser>chrome</browser>
 	<testUrl>https://www.google.com.mx/</testUrl>
+	<test>test</test>
 </config>
