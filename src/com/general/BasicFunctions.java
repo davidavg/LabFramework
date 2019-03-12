@@ -1,5 +1,6 @@
 package com.general;
 
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,6 +15,8 @@ public class BasicFunctions {
 	private String strBrowser, strUrl;
 	public WebDriver driver;
 	public WebDriverWait wait;
+	Logging logging = new Logging();
+	Logger log = logging.initLogger(this.getClass().getName());
 	
 	public BasicFunctions() {
 		ConfigParams cp = new ConfigParams();
@@ -26,27 +29,33 @@ public class BasicFunctions {
 	public boolean openBroswer() {
 		switch(strBrowser.toUpperCase()) {
 			case "CHROME": 
-				System.out.println("--> BasicFunctions --> Open Chrome"); 
+				//System.out.println("--> BasicFunctions --> Open Chrome"); 
+				log.info("Open Chrome");
 				driver = new ChromeDriver();
 				break;
 			case "IE": 
-				System.out.println("--> BasicFunctions --> Open IE"); 
+				//System.out.println("--> BasicFunctions --> Open IE"); 
+				log.info("Open IE");
 				driver = new InternetExplorerDriver();
 				return true;
 			case "FIREFOX": 
 			case "MOZILLA":	
-				System.out.println("--> BasicFunctions --> Open FireFox"); 
+				//System.out.println("--> BasicFunctions --> Open FireFox"); 
+				log.info("Open FireFox");
 				driver = new FirefoxDriver();
 				break;
 			case "EDGE":
-				System.out.println("--> BasicFunctions --> Open Edge");
+				//System.out.println("--> BasicFunctions --> Open Edge");
+				log.info("Open Edge");
 				driver = new EdgeDriver();
 				break;
-			default: System.out.println("Browser is either invalid or not specified");
+			default: //System.out.println("Browser is either invalid or not specified");
+					 log.error("Browser is either invalid or not specified");
 			return false;
 		}
 		
-		System.out.println("--> BasicFunctions --> Maximize Window");
+		//System.out.println("--> BasicFunctions --> Maximize Window");
+		log.info("Maximize Window");
 		driver.manage().window().maximize();
 		
 		return true;
@@ -55,44 +64,53 @@ public class BasicFunctions {
 	public boolean openBroswer(String strBrowser) {
 		switch(strBrowser.toUpperCase()) {
 			case "CHROME": 
-				System.out.println("--> BasicFunctions --> Open Chrome"); 
+				//System.out.println("--> BasicFunctions --> Open Chrome"); 
+				log.info("Open Chrome");
 				driver = new ChromeDriver();
 				break;
 			case "IE": 
-				System.out.println("--> BasicFunctions --> Open IE"); 
+				//System.out.println("--> BasicFunctions --> Open IE"); 
+				log.info("Open IE");
 				driver = new InternetExplorerDriver();
 				return true;
 			case "FIREFOX": 
 			case "MOZILLA":	
-				System.out.println("--> BasicFunctions --> Open FireFox"); 
+				//System.out.println("--> BasicFunctions --> Open FireFox"); 
+				log.info("Open FireFox");
 				driver = new FirefoxDriver();
 				break;
 			case "EDGE":
-				System.out.println("--> BasicFunctions --> Open Edge");
+				//System.out.println("--> BasicFunctions --> Open Edge");
+				log.info("Open Edge");
 				driver = new EdgeDriver();
 				break;
-			default: System.out.println("Browser is either invalid or not specified");
+			default: //System.out.println("Browser is either invalid or not specified");
+					 log.error("Browser is either invalid or not specified");
 			return false;
-		}
+			}
 		
-		System.out.println("--> BasicFunctions --> Maximize Window");
+		//System.out.println("--> BasicFunctions --> Maximize Window");
+		log.info("Maximize Window");
 		driver.manage().window().maximize();
 		
 		return true;
 	}
 	
 	public void navigateTo() {
-		System.out.println("--> BasicFunctions --> Navigate to " + strUrl);
+		//System.out.println("--> BasicFunctions --> Navigate to " + strUrl);
+		log.info("Navigate to " + strUrl);
 		driver.get(strUrl);
 	}
 	
 	public void navigateTo(String strUrl) {
-		System.out.println("--> BasicFunctions --> Navigate to " + strUrl);
+		//System.out.println("--> BasicFunctions --> Navigate to " + strUrl);
+		log.info("Navigate to " + strUrl);
 		driver.get(strUrl);
 	}
 	
 	public boolean navigateAndWait(By objBy) {
-		System.out.println("--> BasicFunctions --> Navigate to " + strUrl);
+		//System.out.println("--> BasicFunctions --> Navigate to " + strUrl);
+		log.info("Navigate to " + strUrl);
 		driver.get(strUrl);
 		//System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
 		
@@ -101,7 +119,8 @@ public class BasicFunctions {
 		try {
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
 		}catch(Exception e){
-			System.out.println(e);
+			//System.out.println(e);
+			log.error(e);
 			return false;
 		}
 		
@@ -127,7 +146,8 @@ public class BasicFunctions {
 	}
 	
 	public boolean navigateAndWait(By objBy, int timeOutInSeconds) {
-		System.out.println("--> BasicFunctions --> Navigate to " + strUrl);
+		//System.out.println("--> BasicFunctions --> Navigate to " + strUrl);
+		log.info("Navigate to " + strUrl);
 		driver.get(strUrl);
 		//System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
 		
@@ -136,7 +156,8 @@ public class BasicFunctions {
 		try {
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
 		}catch(Exception e){
-			System.out.println(e);
+			//System.out.println(e);
+			log.error(e);
 			return false;
 		}
 		
@@ -162,12 +183,14 @@ public class BasicFunctions {
 	}
 	
 	public void closeBroswer() {
-		System.out.println("--> BasicFunctions --> Close Broswer");
+		//System.out.println("--> BasicFunctions --> Close Broswer");
+		log.info("Close Broswer");
 		driver.quit();
 	}
 	
 	public void closeBroswer(WebDriver driver) {
-		System.out.println("--> BasicFunctions --> Close Broswer");
+		//System.out.println("--> BasicFunctions --> Close Broswer");
+		log.info("Close Broswer");
 		driver.quit();
 	}
 	
@@ -190,13 +213,16 @@ public class BasicFunctions {
 			wait = new WebDriverWait(driver, timeOutInSeconds);
 		}catch(NumberFormatException nfe) {
 			System.out.println("Unable to set timeout due to " + nfe);
+			log.error("Unable to set timeout due to " + nfe);
 		}catch(Exception e) {
 			System.out.println("Unable to set timeout due to " + e);
+			log.error("Unable to set timeout due to " + e);
 		}
 	}
 	
 	public boolean verifyPresenceAndVisibility(By objBy) {
-		System.out.println("--> BasicFunctions --> Wait for element");
+		//System.out.println("--> BasicFunctions --> Wait for element");
+		log.info("Wait for element");
 		///System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
 		
 		setTimeOut();
@@ -205,7 +231,8 @@ public class BasicFunctions {
 			wait.until(ExpectedConditions.presenceOfElementLocated(objBy));
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
 		}catch(Exception e){
-			System.out.println(e);
+			//System.out.println(e);
+			log.error(e);
 			return false;
 		}
 		
@@ -213,7 +240,8 @@ public class BasicFunctions {
 	}
 	
 	public boolean verifyPresenceAndVisibility(By objBy, int timeOutInSeconds) {
-		System.out.println("--> BasicFunctions --> Wait for element");
+		//System.out.println("--> BasicFunctions --> Wait for element");
+		log.info("Wait for element");
 		///System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
 		
 		setTimeOut(timeOutInSeconds);
@@ -222,7 +250,8 @@ public class BasicFunctions {
 			wait.until(ExpectedConditions.presenceOfElementLocated(objBy));
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
 		}catch(Exception e){
-			System.out.println(e);
+			//System.out.println(e);
+			log.error(e);
 			return false;
 		}
 		
@@ -230,7 +259,8 @@ public class BasicFunctions {
 	}
 	
 	public boolean verifyVisibility(By objBy) {
-		System.out.println("--> BasicFunctions --> Wait for element");
+		//System.out.println("--> BasicFunctions --> Wait for element");
+		log.info("Wait for element");
 		///System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
 		
 		setTimeOut();
@@ -238,7 +268,8 @@ public class BasicFunctions {
 		try {
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
 		}catch(Exception e){
-			System.out.println(e);
+			//System.out.println(e);
+			log.error(e);
 			return false;
 		}
 		
@@ -246,7 +277,8 @@ public class BasicFunctions {
 	}
 	
 	public boolean verifyVisibility(By objBy, int timeOutInSeconds) {
-		System.out.println("--> BasicFunctions --> Wait for element");
+		//System.out.println("--> BasicFunctions --> Wait for element");
+		log.info("Wait for element");
 		///System.out.println("--> BasicFunctions --> Wait for element " + strID + "to be visible");
 		
 		setTimeOut(timeOutInSeconds);
@@ -254,7 +286,8 @@ public class BasicFunctions {
 		try {
 			wait.until(ExpectedConditions.visibilityOf(driver.findElement(objBy)));
 		}catch(Exception e){
-			System.out.println(e);
+			//System.out.println(e);
+			log.error(e);
 			return false;
 		}
 		

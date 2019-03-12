@@ -1,0 +1,39 @@
+[DEBUG] 2019-03-11 12:49:34.635 [main] LoggingTest - Debug message
+[INFO ] 2019-03-11 12:49:34.651 [main] LoggingTest - Info message
+[WARN ] 2019-03-11 12:49:34.651 [main] LoggingTest - Warning message
+[FATAL] 2019-03-11 12:49:34.651 [main] LoggingTest - Fatal message
+[ERROR] 2019-03-11 12:49:34.651 [main] LoggingTest - Error message
+[DEBUG] 2019-03-11 12:51:38.620 [main] LoggingTest - Debug message
+[INFO ] 2019-03-11 12:51:38.636 [main] LoggingTest - Info message
+[WARN ] 2019-03-11 12:51:38.636 [main] LoggingTest - Warning message
+[FATAL] 2019-03-11 12:51:38.636 [main] LoggingTest - Fatal message
+[ERROR] 2019-03-11 12:51:38.643 [main] LoggingTest - Error message
+[DEBUG] 2019-03-11 12:52:14.838 [main] LoggingTest - Debug message
+[INFO ] 2019-03-11 12:52:14.854 [main] LoggingTest - Info message
+[WARN ] 2019-03-11 12:52:14.854 [main] LoggingTest - Warning message
+[FATAL] 2019-03-11 12:52:14.854 [main] LoggingTest - Fatal message
+[ERROR] 2019-03-11 12:52:14.856 [main] LoggingTest - Error message
+[DEBUG] 2019-03-11 12:52:42.871 [main] LoggingTest - Debug message
+[INFO ] 2019-03-11 12:52:42.886 [main] LoggingTest - Info message
+[WARN ] 2019-03-11 12:52:42.886 [main] LoggingTest - Warning message
+[FATAL] 2019-03-11 12:52:42.886 [main] LoggingTest - Fatal message
+[ERROR] 2019-03-11 12:52:42.886 [main] LoggingTest - Error message
+[INFO ] 2019-03-11 12:52:42.905 [main] Logging - debugging test message
+[DEBUG] 2019-03-11 12:55:34.525 [main] LoggingTest - Debug message
+[INFO ] 2019-03-11 12:55:34.525 [main] LoggingTest - Info message
+[WARN ] 2019-03-11 12:55:34.525 [main] LoggingTest - Warning message
+[FATAL] 2019-03-11 12:55:34.525 [main] LoggingTest - Fatal message
+[ERROR] 2019-03-11 12:55:34.525 [main] LoggingTest - Error message
+[INFO ] 2019-03-11 12:55:34.556 [main] Logging - debugging test message
+[DEBUG] 2019-03-12 09:53:31.434 [main] LoggingTest - Debug message
+[INFO ] 2019-03-12 09:53:31.434 [main] LoggingTest - Info message
+[WARN ] 2019-03-12 09:53:31.434 [main] LoggingTest - Warning message
+[FATAL] 2019-03-12 09:53:31.434 [main] LoggingTest - Fatal message
+[ERROR] 2019-03-12 09:53:31.434 [main] LoggingTest - Error message
+[INFO ] 2019-03-12 09:53:31.458 [main] Logging - debugging test message
+[DEBUG] 2019-03-12 09:58:41.634 [main] LoggingTest - Debug message
+[INFO ] 2019-03-12 09:58:41.650 [main] LoggingTest - Info message
+[WARN ] 2019-03-12 09:58:41.650 [main] LoggingTest - Warning message
+[FATAL] 2019-03-12 09:58:41.650 [main] LoggingTest - Fatal message
+[ERROR] 2019-03-12 09:58:41.650 [main] LoggingTest - Error message
+[INFO ] 2019-03-12 09:58:41.678 [main] Logging - debugging test message

@@ -40,7 +40,8 @@ public class Login extends Navigation implements ITestTemplate {
 	
 	@DataProvider
 	public Object[][] credentials(){
-		Object[][] testArray = ExcelUtil.myInputTest(CREDENTIALS_PATH, CREDENTIALS_SHEET);
+		ExcelUtil excel = new ExcelUtil();
+		Object[][] testArray = excel.myInputTest(CREDENTIALS_PATH, CREDENTIALS_SHEET);
 		return testArray;
 	}
 	

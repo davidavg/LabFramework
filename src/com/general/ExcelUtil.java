@@ -3,6 +3,7 @@ package com.general;
 import java.io.File;
 import java.io.FileInputStream;
 
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 //import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -13,6 +14,8 @@ public class ExcelUtil {
 	private static XSSFSheet ExcelWSheet;
 	private static XSSFWorkbook ExcelWBook;
 	private static XSSFCell Cell;
+	Logging logging = new Logging();
+	Logger log = logging.initLogger(this.getClass().getName());
 	//private static XSSFRow Row;
 	
 	//private static String FilePath = "src\\data\\testfile.xlsx";
@@ -31,24 +34,28 @@ public class ExcelUtil {
 		System.out.println("Temrinating...");
 	}*/
 	
-	public static Object[][] myInputTest(String FilePath, String SheetName) {
+	public Object[][] myInputTest(String FilePath, String SheetName) {
 		
 		String[][] tabArray = null;
 		final int START_ROW = 1;
 		final int START_COL = 0;
 		
 		
-		System.out.println("Creating file object");
+		//System.out.println("Creating file object");
+		log.info("Creating file object");
 		File myExcel = new File(FilePath);
 		
 		try {
-			System.out.println("Opening file");
+			//System.out.println("Opening file");
+			log.info("Opening file");
 			FileInputStream ExcelFile = new FileInputStream(myExcel);
 						
-			System.out.println("Create workbook");
+			//System.out.println("Create workbook");
+			log.info("Create workbook");
 			ExcelWBook = new XSSFWorkbook(ExcelFile);
 
-			System.out.println("Create sheet");
+			//System.out.println("Create sheet");
+			log.info("Create sheet");
 			ExcelWSheet = ExcelWBook.getSheet(SheetName);
 
 			int ci,cj;
@@ -59,7 +66,8 @@ public class ExcelUtil {
 
 			ci=0;
 			
-			System.out.println("get content from the file");
+			//System.out.println("get content from the file");
+			log.info("get content from the file");
 			for (int i=START_ROW;i<=totalRows;i++, ci++) {           	   
 
 				cj=0;
@@ -72,7 +80,8 @@ public class ExcelUtil {
 				}
 			}
 			
-			System.out.println("Closing file");
+			//System.out.println("Closing file");
+			log.info("Closing file");
 			ExcelFile.close();
 			
 		} catch (Exception e) {
@@ -85,16 +94,15 @@ public class ExcelUtil {
 	public static String getCellData(int RowNum, int ColNum) throws Exception {
 
 		try{
-
+			
 			Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
 			String CellData = Cell.getStringCellValue();
 			return CellData;
 
 			}catch (Exception e){
 
-			System.out.println(e.getMessage());
-
-			throw (e);
+				System.out.println(e.getMessage());
+				throw (e);
 
 			}
 	}

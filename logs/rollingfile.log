@@ -1,0 +1,6 @@
+[DEBUG] 2019-03-12 09:58:41.634 [main] LoggingTest - Debug message
+[INFO ] 2019-03-12 09:58:41.650 [main] LoggingTest - Info message
+[WARN ] 2019-03-12 09:58:41.650 [main] LoggingTest - Warning message
+[FATAL] 2019-03-12 09:58:41.650 [main] LoggingTest - Fatal message
+[ERROR] 2019-03-12 09:58:41.650 [main] LoggingTest - Error message
+[INFO ] 2019-03-12 09:58:41.678 [main] Logging - debugging test message

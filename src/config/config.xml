@@ -2,5 +2,6 @@
 <config>
 	<browser>chrome</browser>
 	<testUrl>https://www.google.com.mx/</testUrl>
+	<log4path>src/config/log4j2.xml</log4path>
 	<test>test</test>
 </config>

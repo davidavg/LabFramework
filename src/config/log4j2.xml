@@ -32,7 +32,11 @@
         </RollingFile>
 	</Appenders>
 	<Loggers>
-		<Logger name="javaLab" level="debug">
+		<Logger name="com.unit_tests" level="debug">
+			<AppenderRef ref="File-Appender"/>
+			<AppenderRef ref="RollingFile-Appender"/>
+		</Logger>
+		<Logger name="com.general" level="debug">
 			<AppenderRef ref="File-Appender"/>
 			<AppenderRef ref="RollingFile-Appender"/>
 		</Logger>
