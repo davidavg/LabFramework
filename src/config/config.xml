@@ -3,5 +3,8 @@
 	<browser>chrome</browser>
 	<testUrl>https://www.google.com.mx/</testUrl>
 	<log4path>src/config/log4j2.xml</log4path>
+	<dbUrl>jdbc:postgresql://localhost:5432/LabFramework</dbUrl>
+	<dbUser>postgres</dbUser>
+	<dbPswd>l4bfr4me</dbPswd>
 	<test>test</test>
 </config>
