@@ -2,19 +2,12 @@ package com.unit_tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.BeforeClass;
-
 import com.general.ConfigParams;
 
 import org.junit.jupiter.api.Test;
 
 class ConfigParamsTests {
 
-	@BeforeClass
-	//public void beforeClass() {
-		
-	//}
-	
 	@Test
 	void defaultValues() {
 		ConfigParams cp = new ConfigParams();
