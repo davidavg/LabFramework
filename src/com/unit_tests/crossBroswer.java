@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.general.BasicFunctions;
 import org.junit.jupiter.api.Test;
 
-class cross_broswer {
+class crossBroswer {
 	
 	//Constant values for tests
 	String CHROME = "chrome", FIREFOX = "firefox", MOZILLA = "mozilla", IE = "ie", EDGE = "edge";
