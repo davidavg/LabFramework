@@ -23,7 +23,7 @@ public class navigateToTests {
 	} 
 	
 	@Test
-	public void test() {
+	public void navigateTo_NoURL() {
 		try {
 			basic.navigateTo();
 			Assert.assertTrue(true);
