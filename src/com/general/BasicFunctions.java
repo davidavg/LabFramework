@@ -1,6 +1,7 @@
 package com.general;
 
 import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -308,5 +309,26 @@ public class BasicFunctions {
 	
 	public String getUrl() {
 		return this.strUrl;
+	}
+	
+	public boolean verifyText(By objBy, String expectedString) {
+		
+		String actualString;
+		
+		log.info("Verify text " + expectedString);
+		
+		try {
+			actualString = driver.findElement(objBy).getText();
+			if(!actualString.equalsIgnoreCase(""))
+				return actualString.equalsIgnoreCase(expectedString);
+			else {
+				log.error("Empty string returned");
+				return false;
+			}
+		}catch(Exception e) {
+			log.error("Unable to get text from object " + e);
+			return false;
+		}
+		
 	}
 }
