@@ -21,7 +21,7 @@ public class navigateAndWait {
 	@AfterClass
 	public static void end() {
 		basic.closeBroswer();
-	}
+	} 
 		
 	@Test
 	public void navigateByID_objectFound_notimeOutSet() {
