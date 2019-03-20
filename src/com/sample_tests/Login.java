@@ -11,6 +11,9 @@ import org.testng.annotations.Test;
 
 import com.general.ITestTemplate;
 import com.general.Navigation;
+
+import io.qameta.allure.Step;
+
 import com.general.ExcelUtil;
 
 @Listeners(com.general.TestNGListeners.class)
@@ -38,6 +41,7 @@ public class Login extends Navigation implements ITestTemplate {
 		
 	}
 	
+	@Step
 	@DataProvider
 	public Object[][] credentials(){
 		ExcelUtil excel = new ExcelUtil();
@@ -45,19 +49,19 @@ public class Login extends Navigation implements ITestTemplate {
 		return testArray;
 	}
 	
-	@Test(dataProvider="credentials", enabled = true)
+	@Test(dataProvider="credentials", enabled = true, description="This is a sample Login test")
 	public void loginTest01(String user, String password) {
 		System.out.println("--> Login --> Happy path test");
 		login(user, password);
 		Assert.assertTrue(driver.findElement(By.id("hplogo")).isDisplayed());
 	}
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void loginTest02() {
 		System.out.println("--> Login --> Negative Test01");
 	}
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void loginTest03() {
 		System.out.println("--> Login --> Negative Test02");
 	}
